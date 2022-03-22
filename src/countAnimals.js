@@ -12,10 +12,16 @@ function countAnimals(animal) {
     }, {});
     return blank;
   }
+  // input obj
+  if (Object.values(animal).length === 1) {
+    const targetAnimal = species.filter((elSpecies) => elSpecies.name === Object.values(animal)[0]);
+    return targetAnimal[0].residents.length;
+  }
+  return 'batata';
 }
 
 // console.log('final blank: ', countAnimals());
-// console.log('final uma esp: ', countAnimals({ specie: 'penguins' }));
+console.log('final uma esp: ', countAnimals({ specie: 'penguins' }));
 
 module.exports = countAnimals;
 
@@ -33,3 +39,8 @@ module.exports = countAnimals;
 // const seekAnimal = species.filter((elementAnimal) => elementAnimal.name === animal);
 // const { residents } = seekAnimal[0]; // direto do req 2
 // }
+
+// console.log(targetAnimal); // arr com objeto animal completo
+// console.log(Object.values(animal)); // [ 'penguins' ]
+// console.log(Object.values(animal)[0]); // penguins
+// console.log(targetAnimal[0].residents.length); // 4
