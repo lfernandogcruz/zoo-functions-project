@@ -13,15 +13,15 @@ function countAnimals(animal) {
     return blank;
   }
   // input obj
-  if (Object.values(animal).length === 1) {
-    const targetAnimal = species.filter((elSpecies) => elSpecies.name === Object.values(animal)[0]);
-    return targetAnimal[0].residents.length;
-  }
-  return 'batata';
+  const targetAnimal = species.filter((elSpecies) => elSpecies.name === Object.values(animal)[0]);
+  if (Object.values(animal).length === 1) return targetAnimal[0].residents.length;
+  const sTarget = targetAnimal[0].residents.filter((elS) => elS.sex === Object.values(animal)[1]);
+  return sTarget.length;
 }
 
 // console.log('final blank: ', countAnimals());
-console.log('final uma esp: ', countAnimals({ specie: 'penguins' }));
+// console.log('final uma esp: ', countAnimals({ specie: 'penguins' }));
+// console.log('final uma esp: ', countAnimals({ specie: 'giraffes', sex: 'female' }));
 
 module.exports = countAnimals;
 
