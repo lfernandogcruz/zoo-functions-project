@@ -5,13 +5,13 @@ function getAnimalsOlderThan(animal, age) {
   const { species } = data;
   // find(animal)
   const seekAnimal = species.filter((elementAnimal) => elementAnimal.name === animal);
-  // console.log(seekAnimal);
+  console.log(seekAnimal);
   // every (idade >= age)
   const { residents } = seekAnimal[0];
-  // console.log(residents);
+  console.log(residents);
   const checkAge = residents.every((elementAge) => elementAge.age >= age);
   return checkAge;
 }
-// console.log(getAnimalsOlderThan('otters', 7));
+console.log(getAnimalsOlderThan('otters', 7));
 
 module.exports = getAnimalsOlderThan;
